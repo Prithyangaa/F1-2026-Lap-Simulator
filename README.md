@@ -15,7 +15,7 @@ This repository is a self-contained lap-time simulator that models the drag/down
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/f1-2026-lap-simulator.git
+git clone https://github.com/Prithyangaa/f1-2026-lap-simulator.git
 cd f1-2026-lap-simulator
 ```
 
