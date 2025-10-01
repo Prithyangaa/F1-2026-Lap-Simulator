@@ -97,15 +97,11 @@ car_params = {
 # Buttons: Simulate / Save / GA
 # -------------------------
 col1, col2, col3 = st.columns(3)
-
-with col1:
-    if st.button("Simulate Lap"):
-        with st.spinner("Simulating..."):
-            outputs = sim.simulate_lap(car_params, track, mode=mode)
-            st.session_state["last_outputs"] = outputs
-            st.session_state["last_inputs"] = car_params
-            st.success("Simulation complete")
-            st.rerun()
+if "last_outputs" not in st.session_state:
+    with st.spinner("Simulating..."):
+        outputs = sim.simulate_lap(car_params, track, mode=mode)
+        st.session_state["last_outputs"] = outputs
+        st.session_state["last_inputs"] = car_params
 
 with col2:
     if st.button("Save run"):
